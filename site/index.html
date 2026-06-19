@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deploy via GitHub Actions</title>
+  <style>
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+           background:#17163A; color:#fff; display:flex; min-height:100vh;
+           align-items:center; justify-content:center; text-align:center; }
+    .card { background:#232050; padding:48px 56px; border-radius:18px;
+            box-shadow:0 20px 60px rgba(0,0,0,.35); border:1px solid #7B42BC; }
+    h1 { margin:0 0 8px; font-size:34px; }
+    .badge { display:inline-block; background:#1FC9A0; color:#17163A; font-weight:700;
+             padding:6px 14px; border-radius:999px; font-size:14px; margin-bottom:18px; }
+    p { margin:6px 0; color:#CFC9EC; }
+    code { background:#17163A; color:#1FC9A0; padding:2px 8px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <span class="badge">deploy automatizado</span>
+    <h1>🚀 Entregue via GitHub Actions</h1>
+    <p>Aplicação publicada nas instâncias EC2 atrás do Load Balancer.</p>
+    <p>Versão: <code>__VERSION__</code></p>
+    <!-- A linha abaixo é preenchida no momento do deploy, em cada instância -->
+  </div>
+</body>
+</html>
