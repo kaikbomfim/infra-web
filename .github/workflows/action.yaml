@@ -1,0 +1,12 @@
+name: Deploy na AWS
+
+on:
+ push:
+  branches: [main]
+
+jobs:
+ deploy:
+  runs-on: ubuntu-latest
+  steps:
+   - name: Primeiro passo
+     run: echo "O pipeline rodou!"
