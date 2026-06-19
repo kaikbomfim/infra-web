@@ -10,3 +10,11 @@ jobs:
   steps:
    - name: Primeiro passo
      run: echo "O pipeline rodou!"
+
+   - uses: actions/checkout@v4
+   
+   - name: Validar o site
+     run: |
+      test -f site/index.html
+      grep -q "<h1>" site/index.html
+      echo "site/index.html OK"
