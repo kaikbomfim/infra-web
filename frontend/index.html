@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>POSWEB 2026 - People Management System</title>
+    <title>POSWEB 2026 - Sistema de Gerenciamento de Pessoas</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,7 +11,9 @@
   </head>
   <body>
     <div class="container mt-5">
-      <h1 class="text-center mb-4">POSWEB 2026 - People Management System</h1>
+      <h1 class="text-center mb-4">
+        POSWEB 2026 - Sistema de Gerenciamento de Pessoas
+      </h1>
 
       <!-- Form to Add or Update Person -->
       <div class="card mb-4">
@@ -19,40 +21,40 @@
           <form id="personForm">
             <input type="hidden" id="personId" />
             <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
+              <label for="name" class="form-label">Nome</label>
               <input
                 type="text"
                 class="form-control"
                 id="name"
-                placeholder="Enter name"
+                placeholder="Digite o nome"
                 required
               />
             </div>
             <div class="mb-3">
-              <label for="age" class="form-label">Age</label>
+              <label for="age" class="form-label">Idade</label>
               <input
                 type="number"
                 class="form-control"
                 id="age"
-                placeholder="Enter age"
+                placeholder="Digite a idade"
                 required
               />
             </div>
             <div class="mb-3">
-              <label for="cell_phone" class="form-label">Cell Phone</label>
+              <label for="cell_phone" class="form-label">Celular</label>
               <input
                 type="text"
                 class="form-control"
                 id="cell_phone"
-                placeholder="Enter cell phone"
+                placeholder="Digite o celular"
                 required
               />
             </div>
             <button type="submit" class="btn btn-primary" id="submitBtn">
-              Add Person
+              Adicionar pessoa
             </button>
             <button type="button" class="btn btn-secondary" id="resetBtn">
-              Reset
+              Limpar
             </button>
           </form>
         </div>
@@ -63,10 +65,10 @@
         <thead>
           <tr>
             <th>ID</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Cell Phone</th>
-            <th>Actions</th>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Celular</th>
+            <th>Ações</th>
           </tr>
         </thead>
         <tbody id="peopleTableBody">
@@ -105,8 +107,8 @@
                         <td>${person.age}</td>
                         <td>${person.cell_phone}</td>
                         <td>
-                            <button class="btn btn-warning btn-sm" onclick="editPerson(${person.id})">Edit</button>
-                            <button class="btn btn-danger btn-sm" onclick="deletePerson(${person.id})">Delete</button>
+                            <button class="btn btn-warning btn-sm" onclick="editPerson(${person.id})">Editar</button>
+                            <button class="btn btn-danger btn-sm" onclick="deletePerson(${person.id})">Excluir</button>
                         </td>
                     `;
               tableBody.appendChild(row);
@@ -142,7 +144,7 @@
             })
               .then((response) => response.json())
               .then(() => {
-                alert("Person updated successfully!");
+                alert("Pessoa atualizada com sucesso!");
                 fetchPeople();
                 resetForm();
               });
@@ -157,7 +159,7 @@
             })
               .then((response) => response.json())
               .then(() => {
-                alert("Person added successfully!");
+                alert("Pessoa adicionada com sucesso!");
                 fetchPeople();
                 resetForm();
               });
@@ -170,7 +172,7 @@
         document.getElementById("name").value = "";
         document.getElementById("age").value = "";
         document.getElementById("cell_phone").value = "";
-        document.getElementById("submitBtn").innerText = "Add Person";
+        document.getElementById("submitBtn").innerText = "Adicionar pessoa";
       }
 
       // Edit a person (prefill the form)
@@ -182,19 +184,19 @@
             document.getElementById("name").value = person.name;
             document.getElementById("age").value = person.age;
             document.getElementById("cell_phone").value = person.cell_phone;
-            document.getElementById("submitBtn").innerText = "Update Person";
+            document.getElementById("submitBtn").innerText = "Atualizar pessoa";
           });
       }
 
       // Delete a person
       function deletePerson(id) {
-        if (confirm("Are you sure you want to delete this person?")) {
+        if (confirm("Tem certeza que deseja excluir esta pessoa?")) {
           fetch(`${apiUrl}/${id}`, {
             method: "DELETE",
           })
             .then((response) => response.json())
             .then(() => {
-              alert("Person deleted successfully!");
+              alert("Pessoa excluída com sucesso!");
               fetchPeople();
             });
         }
