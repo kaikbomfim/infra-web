@@ -16,6 +16,7 @@ apt -y install \
     nginx
 
 mkdir /home/ubuntu/myapp
+chown -R ubuntu:ubuntu /home/ubuntu/myapp
 cd /home/ubuntu/myapp
 python3 -m venv .
 source ./bin/activate
@@ -23,3 +24,5 @@ pip install \
     flask \
     flask-mysqldb \
     flask-cors
+
+chown ubuntu:ubuntu /var/www/html
